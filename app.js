@@ -13,9 +13,13 @@ app.get("/results", function(req,res){
     var url = 'http://www.omdbapi.com/?apikey=thewdb&s='+query;
 	axios.get(url)
     .then(function (response) {
-
-		var data = response.data;
-		res.render("results",{data:data})
+        if(response.data.Search == undefined){
+            res.render("noResults", {query: query});
+            console.log("no results");
+        }else{
+        var data = response.data;        
+        res.render("results",{data:data})
+        }
     })
     .catch(function (error) {
         // handle error
