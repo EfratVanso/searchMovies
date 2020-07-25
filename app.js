@@ -8,8 +8,10 @@ app.get("/", function(req,res){
 });
 
 app.get("/results", function(req,res){
-	
-	axios.get('http://www.omdbapi.com/?s=california&apikey=thewdb')
+    
+    var query = req.query.search;
+    var url = 'http://www.omdbapi.com/?apikey=thewdb&s='+query;
+	axios.get(url)
     .then(function (response) {
 
 		var data = response.data;
