@@ -2,19 +2,14 @@ const express = require('express');
 const app = express();
 app.set("view engine", "ejs");
 var axios = require('axios').default;
-//var pry = require('pryjs');
-console.log('=======================================================================');
-
 
 app.get("/results", function(req,res){
 	
 	axios.get('http://www.omdbapi.com/?s=stars&apikey=thewdb')
     .then(function (response) {
-        //eval(pry.it)
-        console.log(response.data);
-		var x = response.data;
-		res.send( response.data.Search[0]);
-		
+
+		var data = response.data;
+		res.render("results",{data:data})
     })
     .catch(function (error) {
         // handle error
