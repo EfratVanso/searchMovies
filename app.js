@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 app.set("view engine", "ejs");
 var axios = require('axios').default;
+app.use(express.static("public"));
+var partials = require('express-partials');
+app.use(partials());
 
 app.get("/", function(req,res){
     res.render("search");
@@ -18,7 +21,7 @@ app.get("/results", function(req,res){
             console.log("no results");
         }else{
         var data = response.data;        
-        res.render("results",{data:data})
+        res.render("results",{data:data, query: query})
         }
     })
     .catch(function (error) {
