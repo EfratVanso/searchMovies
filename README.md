@@ -1,4 +1,4 @@
-# searchMovies
+# Search Movies
 
 >Search movies by name
 
