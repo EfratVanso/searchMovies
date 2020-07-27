@@ -1,9 +1,9 @@
-<body>
+<body style="background-image: linear-gradient(to bottom right,#00aaff, #00ff55);">
     <title>Search Movies</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous"/>    </head>
-<div class="container-fluid">
+<div class="container-fluid ">
   
 
 <div class="row">
@@ -18,7 +18,13 @@
     <div class="input-group mb-3">
         <input type="text" name="search" class=" form-control" placeholder="search for movie" aria-label="Recipient's username" aria-describedby="basic-addon2">
         <div class="">
-          <input value="Search" class="btn text-white btn-outline-secondary bg-primary" style="margin-left: 20px;" type="submit"></input>
+          <input 
+          value="Search" 
+          class="btn text-white btn-outline-secondary bg-primary" 
+          style="margin-left: 20px;" 
+          type="submit"
+          pattern = "[A-Za-z]">
+        </input>
         </div>
       </div>
 </form>
